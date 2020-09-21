@@ -1,0 +1,29 @@
+.searchbar {
+  padding: 1rem 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #202020;
+  margin-bottom: 4rem;
+}
+
+.searchbar-input {
+  padding: 0;
+  border: none;
+  height: 1.4rem;
+  min-width: 200px;
+}
+.searchbar-input:focus {
+  outline: none;
+}
+.searchbar-button {
+  border: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: white;
+  background-color: #e3459e;
+}
+.searchbar-button :hover {
+  cursor: pointer;
+}
