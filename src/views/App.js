@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../views/App.css';
 // components
-import Searchbar from '../components/searchbar/Searchbar';
-import Card from '../components/heroeCard/HeroeCard';
+import Searchbar from '../components/SearchBar/Searchbar';
+import Card from '../components/HeroeCard/HeroeCard';
 function App() {
   const { heroes, setHeroes } = useState();
   return (

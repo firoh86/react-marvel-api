@@ -1,5 +1,5 @@
 import React from 'react';
-import '../heroeCard/heroeCard.css';
+import './heroeCard.css';
 const Heroecard = (props) => {
   return (
     <div className="card">
