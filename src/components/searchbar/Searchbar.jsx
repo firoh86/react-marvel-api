@@ -19,17 +19,26 @@ const Searchbar = ({ fillByType }) => {
 
   // Fetch by custom hook a single heroe info detailed
   const handleGet = async () => {
-    // require timestamp and hash to use marvel_API
-    const data = await fill(content);
+    // check if the input camp is not empty
+    if (content !== '') {
+      // require timestamp and hash to use marvel_API
+      const data = await fill(content);
 
-    // rellenar con la info del callback la data de app
-    // con data.result
-    console.log(data.data.results);
-    fillByType(data.data.results);
+      // rellenar con la info del callback la data de app
+      // console.log(data.results);
+      fillByType(data.results);
+    } else {
+      alert('Escribe el nombre de un super');
+    }
   };
-
+  // Send form with enterkey
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleGet();
+    }
+  };
   return (
-    <div className="searchbar">
+    <div onKeyDown={handleKeyDown}>
       <input
         type="text"
         className="searchbar-input"

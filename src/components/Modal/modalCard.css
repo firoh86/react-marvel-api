@@ -9,6 +9,12 @@
   width: 85vw;
   border-radius: 5px;
   overflow: hidden;
+  transition: 1s background-color, color;
+}
+.true .cardmodal {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  transition: 1s background-color, color;
 }
 .cardmodal-header {
   width: 100%;

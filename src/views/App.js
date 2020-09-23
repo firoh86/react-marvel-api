@@ -11,8 +11,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 // Apikey
 import { URL, API_KEY, HASH } from '../constants';
+// Manage global dark mode
+import Theme from '../hooks/Theme';
 
 function App() {
+  // Dark theme manager hook
+  const [switchTheme, darkMode] = Theme();
   // To manage the window offset
   const [scrollPosition, setSrollPosition] = useState(0);
   // Data from the fetch
@@ -67,8 +71,16 @@ function App() {
   }, [data]);
 
   return (
-    <div className="App">
-      <Searchbar fillByType={fillByType} />
+    <div className={`${darkMode} App`}>
+      <div className="searchbar">
+        <Searchbar fillByType={fillByType} />
+        <label className="switch">
+          <input type="checkbox" checked={darkMode} onChange={switchTheme} />
+
+          <span className="slider round"></span>
+        </label>
+      </div>
+
       <h3 className="Heroes">Listado de Héroes</h3>
 
       {data ? (

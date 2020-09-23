@@ -1,9 +1,13 @@
 import React from 'react';
 
 import '../Modal/modalCard.css';
+// Manage global dark mode
+import Theme from '../../hooks/Theme';
 const ModalCard = ({ info, showmodal }) => {
+  // Dark theme manager hook
+  const [darkMode] = Theme();
   return (
-    <div className="cardmodal">
+    <div className={`${darkMode} cardmodal`}>
       <div className="cardmodal-header">
         <img
           className="cardmodal-img"

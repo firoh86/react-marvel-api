@@ -1,8 +1,12 @@
 import React from 'react';
 import './heroeCard.css';
+// Manage global dark mode
+import Theme from '../../hooks/Theme';
 const Heroecard = ({ info, fillmodal }) => {
+  // Dark theme manager hook
+  const [darkMode] = Theme();
   return (
-    <div className="card">
+    <div className={`${darkMode} card`}>
       <div className="card-header">
         <img
           className="card-img"
