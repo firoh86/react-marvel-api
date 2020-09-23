@@ -3,9 +3,11 @@
   color: white;
   transition: 1s background-color, color;
 }
+
 .false {
   transition: 1s background-color, color;
 }
+
 .cards-container {
   box-sizing: content-box;
   display: grid;
@@ -62,6 +64,7 @@
   background-color: #dd3339;
   color: rgb(248, 220, 156);
   text-decoration: none;
+  outline: none;
 }
 .anchor-button::before {
   position: absolute;
@@ -79,19 +82,6 @@
   color: white;
 }
 
-/* responsive movile first */
-@media (min-width: 1200px) {
-  .cards-container {
-    margin: 2rem 4rem;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-  }
-}
-@media (min-width: 720px) and (max-width: 1199px) {
-  .cards-container {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-    margin: 2rem;
-  }
-}
 /* switch button */
 .switch {
   position: relative;
@@ -121,7 +111,7 @@
   transition: 0.4s;
 }
 
-.slider:before {
+.slider::before {
   position: absolute;
   content: '';
   height: 26px;
@@ -152,7 +142,7 @@ input:checked + .slider:before {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.slider.round::before {
   border-radius: 50%;
 }
 
@@ -165,4 +155,18 @@ input:checked + .slider:before {
   align-items: center;
   background-color: #202020;
   margin-bottom: 4rem;
+}
+
+/* responsive movile first */
+@media (min-width: 1200px) {
+  .cards-container {
+    margin: 2rem 4rem;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+@media (min-width: 720px) and (max-width: 1199px) {
+  .cards-container {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    margin: 2rem;
+  }
 }

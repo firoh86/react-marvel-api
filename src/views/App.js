@@ -3,7 +3,7 @@ import Axios from 'axios';
 
 import '../views/App.css';
 // components
-import Searchbar from '../components/SearchBar/Searchbar';
+import Searchbar from '../components/Searchbar/Searchbar';
 import Card from '../components/HeroeCard/HeroeCard';
 import Modal from '../components/Modal/ModalCard';
 // personalized icons
@@ -29,15 +29,15 @@ function App() {
   // toggle modal window
 
   // function to fill based in searchtypes
-  const fillByType = (info) => {
+  const fillByType = info => {
     // as Default the type is a singular heroe
     setData(info);
   };
   // Modal show controls
   const showmodal = () => {
-    setShowModal((showModal) => !showModal);
+    setShowModal(showModal => !showModal);
   };
-  const fillModal = (info) => {
+  const fillModal = info => {
     setModalData(info);
     showmodal();
   };
@@ -55,11 +55,10 @@ function App() {
       const { data: heroes } = await Axios(
         `${URL}ts=1&apikey=${API_KEY}&hash=${HASH}`
       );
-      console.log(heroes);
 
       setData(heroes.data.results);
     } catch (err) {
-      console.log(err);
+      console.err(`Error: ${err}`);
     }
   };
   useEffect(() => {
@@ -81,7 +80,7 @@ function App() {
         </label>
       </div>
 
-      <h3 className="Heroes">Listado de Héroes</h3>
+      <h3>Listado de Héroes</h3>
 
       {data ? (
         <div className="cards-container">
