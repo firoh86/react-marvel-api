@@ -1,4 +1,4 @@
-# React-Marvel_API
+# React-Marvel-API
 
 23/09/2020 **Alejandro Suárez**
 
