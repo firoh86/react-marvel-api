@@ -2,8 +2,6 @@ import React from 'react';
 
 import '../Modal/modalCard.css';
 const ModalCard = ({ info, showmodal }) => {
-  console.log(info);
-
   return (
     <div className="cardmodal">
       <div className="cardmodal-header">

@@ -13,6 +13,9 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { URL, API_KEY, HASH } from '../constants';
 
 function App() {
+  // To manage the window offset
+  const [scrollPosition, setSrollPosition] = useState(0);
+  // Data from the fetch
   const [data, setData] = useState();
   const [modaldata, setModalData] = useState();
   const [showModal, setShowModal] = useState(false);
@@ -23,8 +26,8 @@ function App() {
 
   // function to fill based in searchtypes
   const fillByType = (info) => {
+    // as Default the type is a singular heroe
     setData(info);
-    console.log(data);
   };
   // Modal show controls
   const showmodal = () => {
@@ -38,7 +41,11 @@ function App() {
   const navigateToUp = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
+  // control on a state var the offset to switch the anchor button
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setSrollPosition(position);
+  };
   const fill = async () => {
     try {
       const { data: heroes } = await Axios(
@@ -52,9 +59,12 @@ function App() {
     }
   };
   useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
     !data && fill();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [data]);
-  console.log(window.pageXOffset);
 
   return (
     <div className="App">
@@ -78,10 +88,11 @@ function App() {
           </div>
         </>
       ) : null}
-
-      <button href="" className="anchor-button" onClick={navigateToUp}>
-        Up!
-      </button>
+      {scrollPosition > 600 && (
+        <button className="anchor-button" onClick={navigateToUp}>
+          Up!
+        </button>
+      )}
     </div>
   );
 }

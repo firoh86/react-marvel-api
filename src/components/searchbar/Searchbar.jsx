@@ -16,8 +16,8 @@ const Searchbar = ({ fillByType }) => {
   const [fill] = searchAPI();
   // icons
   const searchIcon = <FontAwesomeIcon icon={faSearch} />;
-  // fetch test
 
+  // Fetch by custom hook a single heroe info detailed
   const handleGet = async () => {
     // require timestamp and hash to use marvel_API
     const data = await fill(content);
@@ -29,7 +29,7 @@ const Searchbar = ({ fillByType }) => {
   };
 
   return (
-    <div className="searchbar" id="searchBar">
+    <div className="searchbar">
       <input
         type="text"
         className="searchbar-input"
