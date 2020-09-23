@@ -1,12 +1,20 @@
 import React from 'react';
 import './heroeCard.css';
-const Heroecard = (props) => {
+const Heroecard = ({ info, fillmodal }) => {
   return (
     <div className="card">
-      <div className="card-img">Imagen del heroe</div>
-      <div className="card-title">Thor</div>
-      <div className="card-details">
-        Es un dios nórdico que tiene un martillo la mar de chulo la verdad
+      <div className="card-header">
+        <img
+          className="card-img"
+          src={`${info.thumbnail.path}.${info.thumbnail.extension}`}
+          alt={info.name}
+        />
+      </div>
+      <div className="card-body">
+        <div className="card-title">{info.name}</div>
+        <button className="card-button" onClick={() => fillmodal(info)}>
+          Ver detalles
+        </button>
       </div>
     </div>
   );

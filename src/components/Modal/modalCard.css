@@ -1,0 +1,64 @@
+.cardmodal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #181818;
+  color: white;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  width: 85vw;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.cardmodal-header {
+  width: 100%;
+}
+.cardmodal-body {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.cardmodal-img {
+  min-width: 100%;
+  max-width: 100%;
+}
+.card-link {
+  color: white;
+  text-decoration: none;
+
+  background-color: #ec1d24;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 0.4rem;
+  margin: 0 auto;
+}
+.cardmodal-title {
+  font-weight: bold;
+  padding: 1rem 0;
+}
+.cardmodal-button {
+  font-size: 1rem;
+  font-weight: bold;
+  background: transparent;
+  color: #ec1d24;
+  border: 2px solid #ec1d24;
+  border-radius: 3px;
+  font-weight: bold;
+  width: 30%;
+  height: 1.8rem;
+  margin: 1rem auto;
+}
+.cardmodal-button:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .cardmodal {
+    width: 35vw;
+  }
+}
+@media (min-width: 720px) and (max-width: 1199px) {
+  .cardmodal {
+    width: 50vw;
+  }
+}

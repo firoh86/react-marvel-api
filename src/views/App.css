@@ -1,7 +1,86 @@
 .cards-container {
   box-sizing: content-box;
-  margin: 2rem 4rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(1, minmax(200px, 1fr));
+  margin: 2rem 1rem;
   grid-gap: 10px;
+}
+
+.spinner {
+  margin-top: 2rem;
+  font-size: 4rem;
+  color: #ec1d24;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.blurCover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+}
+/* Modal window */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anchor-button {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 1.4rem;
+  padding: 1.4rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #dd3339;
+  color: rgb(248, 220, 156);
+  text-decoration: none;
+}
+.anchor-button::before {
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 25px;
+  top: -8px;
+  margin-left: 3px;
+  background-color: inherit;
+  transform: rotatez(45deg);
+}
+.anchor-button:hover {
+  cursor: pointer;
+  background-color: #ec1d24;
+  color: white;
+}
+
+/* responsive movile first */
+@media (min-width: 1200px) {
+  .cards-container {
+    margin: 2rem 4rem;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+@media (min-width: 720px) and (max-width: 1199px) {
+  .cards-container {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    margin: 2rem;
+  }
 }
